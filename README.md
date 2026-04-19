@@ -1,39 +1,58 @@
-# Hotel Reservation API Tests
+# 🏨 Hotel Reservation API Tests
 
-This project contains API testing for a Hotel Reservation system using Postman.
+This project contains API automation tests for a Hotel Reservation system using Postman.
+
+---
 
 ## 🔧 Tools
+- Postman
 
-* Postman
+---
 
 ## 📌 API
+- Restful Booker API  
+https://restful-booker.herokuapp.com
 
-* Restful Booker API
+---
 
 ## 📂 Project Structure
 
-```
 postman/
   collection.json
   environment.example.json
-```
+
+---
 
 ## 🚀 How to Run
 
-1. Import `collection.json` into Postman
-2. Import `environment.example.json`
-3. Update variables (token, etc.)
+1. Import `collection.json` into Postman  
+2. Import `environment.example.json`  
+3. Update variables:
+   - baseUrl
+   - token (auto-generated)
 4. Run the collection
+
+---
+
+## 🔄 Test Flow
+
+CreateToken → CreateBooking → GetBooking → Update → PartialUpdate → Delete
+
+---
 
 ## ✅ Test Scenarios
 
-* Create Booking
-* Get Booking
-* Update Booking
-* Delete Booking
-* Authentication
+- Authentication (Token generation)  
+- Create Booking  
+- Get Booking  
+- Update Booking  
+- Partial Update Booking  
+- Delete Booking  
+
+---
 
 ## 📎 Notes
 
-* Environment variables are provided as examples
-* Replace placeholder values before running tests
+- Environment variables are provided as template  
+- Token is generated dynamically during execution  
+- Booking ID is stored automatically from response  
