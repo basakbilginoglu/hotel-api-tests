@@ -1,58 +1,85 @@
-# 🏨 Hotel Reservation API Tests
+# 🏨 Hotel Reservation API Automation Framework
 
-This project contains API automation tests for a Hotel Reservation system using Postman.
+This project contains API automation tests using both **Postman** and **Rest Assured (Java)** for a Hotel Reservation system.
 
----
-
-## 🔧 Tools
-- Postman
-
----
-
-## 📌 API
-- Restful Booker API  
-https://restful-booker.herokuapp.com
+It demonstrates a **hybrid API testing approach**, combining:
+- Manual / exploratory API testing (Postman)
+- Automated regression testing (Rest Assured )
 
 ---
 
-## 📂 Project Structure
+## 🔧 Technologies
 
-postman/
-  collection.json
-  environment.example.json
+### 📌 Postman Layer
+- Postman Collections
+- Environment Variables
+- Dynamic chaining (Token, Booking ID)
+
+### 📌 Automation Layer
+- Java
+- Rest Assured
+- Maven
+- Jackson (POJO serialization)
+
+---
+
+## 🌐 API Under Test
+
+**Restful Booker API**
+
+Base URL:https://restful-booker.herokuapp.com
 
 ---
 
 ## 🚀 How to Run
 
-1. Import `collection.json` into Postman  
-2. Import `environment.example.json`  
-3. Update variables:
-   - baseUrl
-   - token (auto-generated)
-4. Run the collection
+### 📌 Postman
+- Import `collection.json`
+- Import `environment.example.json`
+- Set environment variables:
+  - `baseUrl`
+  - `token` (auto-generated during run)
+- Run collection
 
 ---
 
-## 🔄 Test Flow
+### 📌 Rest Assured (Java)
 
-CreateToken → CreateBooking → GetBooking → Update → PartialUpdate → Delete
+Run tests using Maven:
 
----
+```bash
+mvn clean test
 
-## ✅ Test Scenarios
+🔄 Test Flow
 
-- Authentication (Token generation)  
-- Create Booking  
-- Get Booking  
-- Update Booking  
-- Partial Update Booking  
-- Delete Booking  
+📌 Postman Flow
+CreateToken → CreateBooking → GetBooking → UpdateBooking → PartialUpdate → Delete
 
----
+📌 Automation Flow (Rest Assured)
+Create Booking → Validate Response → Get Booking → Update → Delete
 
-## 📎 Notes
+✅ Covered Test Scenarios
 
-- Environment variables are provided as template  
-- Token is generated dynamically during execution  
-- Booking ID is stored automatically from response  
+🔐 Authentication
+Token generation
+Authorization validation
+
+🏨 Booking Operations
+Create booking
+Get booking by ID
+Update booking (PUT)
+Partial update (PATCH)
+Delete booking
+
+🧪 Automation Features (Rest Assured)
+POJO-based request models
+Clean BaseTest structure
+Reusable API methods
+Response validation with assertions
+Dynamic test data handling
+
+📎 Notes
+Postman collection is used for exploratory & manual testing
+Rest Assured is used for regression automation
+Token and booking IDs are dynamically handled in both layers
+Project follows a hybrid API testing strategy
