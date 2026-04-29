@@ -1,4 +1,4 @@
-package com.otelrezervasyonu.tests;
+package com.hotelreservation.tests;
 
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
@@ -11,11 +11,11 @@ public class GetBookingByIdTests extends BaseTest{
     @Test
     public void getBookingByIdTests(){
 
-        Response newBooking=createBooking();
-        int rezervationId=createBookingId();
+
+        int reservationId=createBookingId();
         Response response =given(spec)
                 .when()
-                .get("/booking/"+rezervationId);
+                .get("/booking/"+reservationId);
 
         response
                 .then()
@@ -25,7 +25,7 @@ public class GetBookingByIdTests extends BaseTest{
         String lastname=response.jsonPath().getJsonObject("lastname");
         int totalPrice=response.jsonPath().getJsonObject("totalprice");
 
-        Assertions.assertEquals("Efe",firstname);
+        Assertions.assertEquals("Happy",firstname);
         Assertions.assertEquals("Brown",lastname);
         Assertions.assertEquals(111,totalPrice);
 

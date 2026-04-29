@@ -1,9 +1,9 @@
-package com.otelrezervasyonu.tests;
+package com.hotelreservation.tests;
 
 
-import com.otelrezervasyonu.models.Booking;
-import com.otelrezervasyonu.models.BookingDates;
-import com.otelrezervasyonu.models.BookingResponse;
+import com.hotelreservation.models.Booking;
+import com.hotelreservation.models.BookingDates;
+import com.hotelreservation.models.BookingResponse;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Assertions;
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class CreateBookingTests extends BaseTest{
+public class CreateBookingTests extends BaseTest {
 
     @Test
     public void createBookingTest(){

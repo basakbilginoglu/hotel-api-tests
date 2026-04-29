@@ -1,6 +1,4 @@
-package com.otelrezervasyonu.models;
-
-import org.json.JSONObject;
+package com.hotelreservation.models;
 
 public class Booking {
     private String firstname;

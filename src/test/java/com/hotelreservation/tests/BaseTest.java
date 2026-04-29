@@ -1,4 +1,4 @@
-package com.otelrezervasyonu.tests;
+package com.hotelreservation.tests;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
@@ -53,8 +53,8 @@ public class BaseTest {
         body.put("totalprice",totalprice);
         body.put("depositpaid",depositpaid);
         JSONObject bookingDates=new JSONObject();
-        bookingDates.put("checkin","2018-01-01");
-        bookingDates.put("checkout","2019-01-01");
+        bookingDates.put("checkin","2019-01-01");
+        bookingDates.put("checkout","2019-01-05");
         body.put("bookingdates",bookingDates);
         body.put("additionalneeds","Smoke");
 
